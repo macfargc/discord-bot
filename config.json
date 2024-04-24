@@ -1,0 +1,23 @@
+{
+
+  "supportTicketQuestions": [
+    "What can we help you with?",
+    "What have you done to resolve this issue?",
+    "Is there anything else you would like us to know?"
+  ],
+  "purchaseTicketQuestions": [
+    "What would you like to purchase?",
+    "What payment method would you like to use to make this purchase",
+    "Have you read our terms of service?"
+  ],
+  "reportTicketQuestions": [
+    "Please give us the tag and id of the user you would like to report",
+    "What are you reporting this user for?",
+    "Do you have any evidence? If so please wait till the embed is sent and send us picture or video evidence thanks! (DO NOT ATTACH ANYTHING TO TIHS MESSAGE)"
+  ],
+  "adminTicketQuestions": [
+    "What is the problem / question you have?",
+    "Have you attempted anything to resolve this issue (If question have you asked people of the community before opening this ticket?)",
+    "Is there any additional information you would like us to know?"
+  ]
+}
