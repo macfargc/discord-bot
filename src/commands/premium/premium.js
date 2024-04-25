@@ -148,7 +148,7 @@ module.exports = {
       const userId = interaction.user.id;
 
       const logChannel = interaction.guild.channels.cache.get(
-        config.logChannelId
+        config.premiumLogChannelId
       );
       if (!logChannel) {
         console.error("To use Premium commands, a log channel is required!");
@@ -283,7 +283,7 @@ module.exports = {
 
             // Log code creation
             const logChannel = interaction.guild.channels.cache.get(
-              config.logChannelId
+              config.premiumLogChannelId
             );
             if (!logChannel) {
               console.error("Log channel not found.");
@@ -396,7 +396,7 @@ module.exports = {
                   );
 
                   const logChannel = interaction.guild.channels.cache.get(
-                    config.logChannelId
+                    config.premiumLogChannelId
                   );
                   if (!logChannel) {
                     console.error("Log channel not found.");
@@ -447,7 +447,7 @@ module.exports = {
                         });
 
                         const logChannel = interaction.guild.channels.cache.get(
-                          config.logChannelId
+                          config.premiumLogChannelId
                         );
                         if (!logChannel) {
                           console.error("Log channel not found.");

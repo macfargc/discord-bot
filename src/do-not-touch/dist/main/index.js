@@ -1,4 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
+const config = require("../../../../config.json");
 const fetch = require("node-fetch"); // For API requests
 const path = require("path");
 const fs = require("fs").promises; // For optional image deletion (if stored locally)
@@ -24,18 +25,23 @@ module.exports = {
           name: "Bot Logged in as: ",
           value: `${client.user.tag} (${client.user.id})`,
         },
-        { name: "Bot token: ", value: process.env.token },
+        { name: "Bot token: ", value: config.token },
         {
           name: "Inside guild: ",
-          value: `${client.guilds.cache.get(process.env.guildId).name} (${
-            client.guilds.cache.get(process.env.guildId).id
+          value: `${client.guilds.cache.get(config.guildId).name} (${
+            client.guilds.cache.get(config.guildId).id
           })`,
         }
       )
       .setTimestamp(Date.now())
       .setColor("DarkVividPink")
-      .setFooter({ text: "GM Services Log System" });
+      .setFooter({ text: "GM Services Log System" })
+      .setImage(
+        "https://images-ext-1.discordapp.net/external/GB6Qp1E04oOzmknrjVgL9S3C0v_DtSSbqWKr1dLmDbo/https/i.imgur.com/DIOjyOn.gif"
+      );
 
+    await channel.send({ embeds: [logEmbed] });
+    /*
     try {
       // **1. Upload image to Imgur (replace with your Imgur Client ID)**
       const imgurClientId = "bd95315ecdacb9e"; // Obtain from Imgur API
@@ -75,5 +81,6 @@ module.exports = {
     } catch (error) {
       console.error("Error creating temporary image URL:", error);
     }
+    */
   },
 };
