@@ -4,6 +4,11 @@ const fetch = require("node-fetch"); // For API requests
 const path = require("path");
 const fs = require("fs").promises; // For optional image deletion (if stored locally)
 
+<<<<<<< HEAD
+=======
+require("dotenv").config();
+
+>>>>>>> d71af4fe0998b137e1e74b3a2389543dd1be509f
 module.exports = {
   name: "ready",
   async execute(client) {
