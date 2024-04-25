@@ -1,4 +1,4 @@
-require("dotenv").config();
+const config = require("../../config.json");
 const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
       .setFooter({ text: Date.now(), iconURL: user.displayAvatarURL() });
 
     const welcomeChannel = guild.channels.cache.get(
-      process.env.welcomeChannelId
+      config.welcomeChannelId
     );
 
     await welcomeChannel.send({ embeds: [embed] });

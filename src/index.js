@@ -19,7 +19,7 @@ const client = new Client({
 
 client.commands = new Collection();
 
-require("dotenv").config();
+const config = require("../config.json");
 
 const functions = fs
   .readdirSync("./src/functions")
@@ -35,6 +35,5 @@ const commandFolders = fs.readdirSync("./src/commands");
   }
   client.handleEvents(eventFiles, "./src/events");
   client.handleCommands(commandFolders, "./src/commands");
-  client.login(process.env.token);
+  client.login(config.token);
 })();
-

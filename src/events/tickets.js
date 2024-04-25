@@ -1,5 +1,4 @@
 const { EmbedBuilder, ChannelType } = require("discord.js");
-require("dotenv").config();
 const config = require("../../config.json");
 
 
@@ -17,7 +16,7 @@ module.exports = {
         const supportChannel = await interaction.guild.channels.create({
           name: `support-${userName}`,
           type: ChannelType.GuildText,
-          parent: process.env.ticketCategoryId,
+          parent: config.ticketCategoryId,
         });
         await interaction.reply({
           content: `New support ticket opened @ <#${supportChannel.id}>`,
@@ -62,7 +61,7 @@ module.exports = {
         const billingChannel = await interaction.guild.channels.create({
           name: `billing-${userName}`,
           type: ChannelType.GuildText,
-          parent: process.env.ticketCategoryId,
+          parent: config.ticketCategoryId,
         });
         await interaction.reply({
           content: `New billing & purchase ticket opened @ <#${billingChannel.id}>`,
@@ -106,7 +105,7 @@ module.exports = {
         const reportChannel = await interaction.guild.channels.create({
           name: `report-${userName}`,
           type: ChannelType.GuildText,
-          parent: process.env.ticketCategoryId,
+          parent: config.ticketCategoryId,
         });
         await interaction.reply({
           content: `New report ticket opened @ <#${reportChannel.id}>`,
@@ -150,7 +149,7 @@ module.exports = {
         const adminChannel = await interaction.guild.channels.create({
           name: `admin-${userName}`,
           type: ChannelType.GuildText,
-          parent: process.env.ticketCategoryId,
+          parent: config.ticketCategoryId,
         });
         await interaction.reply({
           content: `New administrative support ticket opened @ <#${adminChannel.id}>`,

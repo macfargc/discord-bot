@@ -2,9 +2,9 @@ const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 const { SlashCommandBuilder } = require("discord.js");
 const fs = require("fs");
-require("dotenv").config();
-const clientId = process.env.clientId;
-const guildId = process.env.guildId;
+const config = require("../../config.json");
+const clientId = config.clientId;
+const guildId = config.guildId;
 
 module.exports = (client) => {
   client.handleCommands = async (commandFolders, path) => {
@@ -27,7 +27,7 @@ module.exports = (client) => {
 
     const rest = new REST({
       version: "9",
-    }).setToken(process.env.token);
+    }).setToken(config.token);
 
     (async () => {
       try {

@@ -6,7 +6,7 @@ const {
 const sqlite3 = require("sqlite3").verbose();
 const path = require("node:path");
 const db = new sqlite3.Database(path.join(__dirname, "codes.db"));
-require("dotenv").config();
+const config = require("../../../config.json");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -148,7 +148,7 @@ module.exports = {
       const userId = interaction.user.id;
 
       const logChannel = interaction.guild.channels.cache.get(
-        process.env.logChannelId
+        config.logChannelId
       );
       if (!logChannel) {
         console.error("To use Premium commands, a log channel is required!");
@@ -283,7 +283,7 @@ module.exports = {
 
             // Log code creation
             const logChannel = interaction.guild.channels.cache.get(
-              process.env.logChannelId
+              config.logChannelId
             );
             if (!logChannel) {
               console.error("Log channel not found.");
@@ -396,7 +396,7 @@ module.exports = {
                   );
 
                   const logChannel = interaction.guild.channels.cache.get(
-                    process.env.logChannelId
+                    config.logChannelId
                   );
                   if (!logChannel) {
                     console.error("Log channel not found.");
@@ -447,7 +447,7 @@ module.exports = {
                         });
 
                         const logChannel = interaction.guild.channels.cache.get(
-                          process.env.logChannelId
+                          config.logChannelId
                         );
                         if (!logChannel) {
                           console.error("Log channel not found.");

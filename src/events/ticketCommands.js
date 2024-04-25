@@ -1,6 +1,6 @@
 const discordTranscripts = require("discord-html-transcripts");
 const { EmbedBuilder } = require("discord.js");
-require("dotenv").config();
+const config = require("../../config.json");
 module.exports = {
   name: "messageCreate",
   async execute(message) {
@@ -8,7 +8,7 @@ module.exports = {
 
     if (message.content.startsWith("++close")) {
       const ticketTranscriptLogChannel = message.guild.channels.cache.get(
-        process.env.ticketLogChannelId
+        config.ticketLogChannelId
       );
       const channelName = message.channel.name;
       const split = channelName.split("-");
